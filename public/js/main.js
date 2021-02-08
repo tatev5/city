@@ -5,7 +5,7 @@ const costOfShipping = [];
 select.addEventListener('change', handeSelectChange);
 async function city(){
     await fetch('https://bestchoicenode.herokuapp.com/submit/city', {
-    method: 'GET'
+    method: 'POST'
 })
 .then(res => res.json())
 .then(data => {
