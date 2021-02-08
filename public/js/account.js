@@ -1,17 +1,13 @@
 const navBar = document.getElementById("navBar")
 
     async function hendler(){
-        const f = await fetch("https://bestchoicenode.herokuapp.com/users/account", {
+        const f = await fetch("https://bestchoicenode.herokuapp.com/account", {
         method: "GET",
             headers: {
             'Accept': 'application/json, text/plain, */*',
             'Content-Type': 'application/json',
- 
+            authorization: token
         },
-        body: JSON.stringify(
-            {
-              authorization: localStorage.getItem("authorization")
-            })
         });
              
               let result = f.json();

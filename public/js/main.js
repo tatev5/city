@@ -4,8 +4,8 @@ const costOfShipping = [];
 
 select.addEventListener('change', handeSelectChange);
 
-     fetch('https://bestchoicenode.herokuapp.com/submit/city', {
-    method: 'POST'
+fetch('http://localhost:3000/submit/city', {
+    method: 'GET'
 })
 .then(res => res.json())
 .then(data => {
@@ -18,8 +18,6 @@ select.addEventListener('change', handeSelectChange);
 .catch(err => {
     console.error(err.message);
 })
-}
-
 
 function createOptions (opt) {
     const option = document.createElement('option');
