@@ -3,8 +3,8 @@ const p = document.getElementById('p');
 const costOfShipping = [];
 
 select.addEventListener('change', handeSelectChange);
-
-fetch('http://localhost:3000/submit/city', {
+async function city(){
+    await fetch('https://bestchoicenode.herokuapp.com/submit/city', {
     method: 'GET'
 })
 .then(res => res.json())
@@ -18,6 +18,8 @@ fetch('http://localhost:3000/submit/city', {
 .catch(err => {
     console.error(err.message);
 })
+}
+ city()
 
 function createOptions (opt) {
     const option = document.createElement('option');

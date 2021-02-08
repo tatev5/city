@@ -21,10 +21,18 @@ const form = document.getElementById("formLogin")
    
        let result = await f.json();
 
-		  if(result){
-        localStorage.setItem('auth',result)
-        return redirect("../account.html");
-		  }
+       if(result.message === 'okey')  {
+        localStorage.setItem('authorization',result.token)
+        window.location.href = 'account.html'
+          } 
+          else{
+          window.location.href = 'error.html'
+         }
+          
+		  
+        
+       
+		  
 
      
        }
